@@ -13,43 +13,43 @@ public class CashbackHackServiceTest {
     @Test
     public void shouldTellMoreWhen1000() {
 
-        assertEquals(cash.remain(2754), 246);
+        assertEquals(246, cash.remain(2754));
     }
 
     @Test
     public void shouldTellLess() {
 
-        Assertions.assertEquals(cash.remain(999), 1);
+        Assertions.assertEquals(1, cash.remain(999));
     }
 
     @Test
     public void shouldTellAbove() {
 
-        Assert.assertEquals(cash.remain(1001), 999);
+        Assert.assertEquals(999, cash.remain(1001));
     }
 
     @Test
     public void shouldTellIfZero() {
 
-        Assertions.assertEquals(cash.remain(0), 1000);
+        Assertions.assertEquals(1000, cash.remain(0));
     }
 
     @Test
     public void shouldNotTellIfBelowZero() {
 
-        Assert.assertEquals(cash.remain(-50), 0);
+        Assert.assertEquals(0, cash.remain(-50));
     }
 
     @Test
     public void shouldNotTellMoreWhen1T() {
 
-        Assertions.assertEquals(cash.remain(1000), 0);
+        Assertions.assertEquals(0, cash.remain(1000));
     }
 
     @Test
     public void shouldNotTellMoreWhenAnyT() {
 
-        Assert.assertEquals(cash.remain(3000), 0);
+        Assert.assertEquals(0, cash.remain(3000));
     }
 }
 
